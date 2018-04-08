@@ -19,6 +19,9 @@
 		819EA2022079B7D200A5C0A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA1FF2079B7D200A5C0A1 /* ViewController.swift */; };
 		819EA2032079B7D200A5C0A1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA2002079B7D200A5C0A1 /* ListViewController.swift */; };
 		819EA2042079B7D200A5C0A1 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA2012079B7D200A5C0A1 /* NextViewController.swift */; };
+		819EA2082079BF1E00A5C0A1 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA2062079BF1E00A5C0A1 /* VideoCell.swift */; };
+		819EA2092079BF1E00A5C0A1 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819EA2072079BF1E00A5C0A1 /* VideoCell.xib */; };
+		819EA20C2079C53800A5C0A1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA20B2079C53800A5C0A1 /* DataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		819EA1FF2079B7D200A5C0A1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		819EA2002079B7D200A5C0A1 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		819EA2012079B7D200A5C0A1 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		819EA2062079BF1E00A5C0A1 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		819EA2072079BF1E00A5C0A1 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		819EA20B2079C53800A5C0A1 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		917517DBBE29A51172EE7F5B /* Pods_VideoPlaySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlaySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9454C984D5F9A08282239114 /* Pods-VideoPlaySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoPlaySwift/Pods-VideoPlaySwift.release.xcconfig"; sourceTree = "<group>"; };
 		D55C17FFCCAF6269A6E5D6B9 /* Pods-VideoPlaySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoPlaySwift/Pods-VideoPlaySwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 		8123C66B207314EF00683A7D /* VideoPlaySwift */ = {
 			isa = PBXGroup;
 			children = (
+				819EA20A2079C51F00A5C0A1 /* Models */,
+				819EA2052079BEEA00A5C0A1 /* Views */,
 				819EA1FE2079B7D200A5C0A1 /* Controllers */,
 				819EA1F92079AA9600A5C0A1 /* Utils */,
 				8123C67E2073152100683A7D /* VideoPlay */,
@@ -128,6 +136,23 @@
 				819EA2002079B7D200A5C0A1 /* ListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		819EA2052079BEEA00A5C0A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				819EA2062079BF1E00A5C0A1 /* VideoCell.swift */,
+				819EA2072079BF1E00A5C0A1 /* VideoCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		819EA20A2079C51F00A5C0A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				819EA20B2079C53800A5C0A1 /* DataModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8123C677207314F100683A7D /* LaunchScreen.storyboard in Resources */,
+				819EA2092079BF1E00A5C0A1 /* VideoCell.xib in Resources */,
 				8123C674207314F100683A7D /* Assets.xcassets in Resources */,
 				8123C672207314EF00683A7D /* Main.storyboard in Resources */,
 			);
@@ -244,8 +270,10 @@
 			files = (
 				819EA2022079B7D200A5C0A1 /* ViewController.swift in Sources */,
 				819EA2042079B7D200A5C0A1 /* NextViewController.swift in Sources */,
+				819EA2082079BF1E00A5C0A1 /* VideoCell.swift in Sources */,
 				819EA1FB2079AA9600A5C0A1 /* GCDDelay.swift in Sources */,
 				8123C6A82074AFDA00683A7D /* CustomSlider.swift in Sources */,
+				819EA20C2079C53800A5C0A1 /* DataModel.swift in Sources */,
 				8123C6802073156B00683A7D /* VideoPlay.swift in Sources */,
 				8123C66D207314EF00683A7D /* AppDelegate.swift in Sources */,
 				8123C684207315A500683A7D /* VideoPlayView.swift in Sources */,
