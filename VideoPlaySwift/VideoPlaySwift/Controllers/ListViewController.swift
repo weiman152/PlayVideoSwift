@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ListViewController: UIViewController {
     
@@ -40,7 +41,27 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: UITableViewDelegate {
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cell = tableView.cellForRow(at: indexPath)
+        guard cell is VideoCell else {
+            return
+        }
+        let videoCell = cell as! VideoCell
+        if let layers = videoCell.playView.layer.sublayers {
+            for layer in layers {
+                if layer is AVPlayerLayer {
+                    let newLayer = layer
+                    layer.removeFromSuperlayer()
+                    
+                }
+            }
+        }
+        
+//        let vc = VideoDetailController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
 }
 

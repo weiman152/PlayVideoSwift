@@ -22,7 +22,14 @@ protocol VideoPlayDelegate: NSObjectProtocol {
 
 class VideoPlay: NSObject {
     
+    enum Status {
+        case none
+        case playing
+        case pausing
+    }
+    
     weak var delegate: VideoPlayDelegate?
+    var status: Status = Status.none
 
     private lazy var player: AVPlayer = {
         guard let url = currentPlayUrl else {
@@ -60,7 +67,7 @@ class VideoPlay: NSObject {
         
         playerLayer = AVPlayerLayer(player: self.player)
         playerLayer.frame = frame
-        playerLayer.videoGravity = .resizeAspect
+        playerLayer.videoGravity = .resizeAspectFill
         return playerLayer
     }
     
@@ -78,10 +85,12 @@ extension VideoPlay {
             return
         }
         player.play()
+        status = Status.playing
     }
     
     func pause() {
         player.pause()
+        status = Status.pausing
     }
     
     func remove() {
@@ -93,6 +102,7 @@ extension VideoPlay {
         currentPlayUrl = nil
         playerLayer.removeFromSuperlayer()
         playScheduleTimer.invalidate()
+        status = Status.none
     }
     
     /// 静音
@@ -116,6 +126,10 @@ extension VideoPlay {
         let time: CMTime = item.currentTime()
         let currentTime = Float(time.value) / Float(time.timescale)
         return currentTime
+    }
+    /// 当前正在播放的视频的url
+    func currentPlayingUrl() -> String? {
+        return currentPlayUrl
     }
 }
 

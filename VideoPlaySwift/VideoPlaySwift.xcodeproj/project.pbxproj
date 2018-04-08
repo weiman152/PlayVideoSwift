@@ -22,6 +22,7 @@
 		819EA2082079BF1E00A5C0A1 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA2062079BF1E00A5C0A1 /* VideoCell.swift */; };
 		819EA2092079BF1E00A5C0A1 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 819EA2072079BF1E00A5C0A1 /* VideoCell.xib */; };
 		819EA20C2079C53800A5C0A1 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA20B2079C53800A5C0A1 /* DataModel.swift */; };
+		819EA20E207A007E00A5C0A1 /* VideoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819EA20D207A007E00A5C0A1 /* VideoDetailController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		819EA2062079BF1E00A5C0A1 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		819EA2072079BF1E00A5C0A1 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		819EA20B2079C53800A5C0A1 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		819EA20D207A007E00A5C0A1 /* VideoDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailController.swift; sourceTree = "<group>"; };
 		917517DBBE29A51172EE7F5B /* Pods_VideoPlaySwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlaySwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9454C984D5F9A08282239114 /* Pods-VideoPlaySwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaySwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoPlaySwift/Pods-VideoPlaySwift.release.xcconfig"; sourceTree = "<group>"; };
 		D55C17FFCCAF6269A6E5D6B9 /* Pods-VideoPlaySwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlaySwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoPlaySwift/Pods-VideoPlaySwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				819EA1FF2079B7D200A5C0A1 /* ViewController.swift */,
 				819EA2012079B7D200A5C0A1 /* NextViewController.swift */,
 				819EA2002079B7D200A5C0A1 /* ListViewController.swift */,
+				819EA20D207A007E00A5C0A1 /* VideoDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				819EA2022079B7D200A5C0A1 /* ViewController.swift in Sources */,
+				819EA20E207A007E00A5C0A1 /* VideoDetailController.swift in Sources */,
 				819EA2042079B7D200A5C0A1 /* NextViewController.swift in Sources */,
 				819EA2082079BF1E00A5C0A1 /* VideoCell.swift in Sources */,
 				819EA1FB2079AA9600A5C0A1 /* GCDDelay.swift in Sources */,
@@ -428,7 +432,10 @@
 				DEVELOPMENT_TEAM = L46R8Q8R89;
 				INFOPLIST_FILE = VideoPlaySwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cddh.VideoPlaySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,7 +452,10 @@
 				DEVELOPMENT_TEAM = L46R8Q8R89;
 				INFOPLIST_FILE = VideoPlaySwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cddh.VideoPlaySwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
