@@ -43,21 +43,21 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYe-nX-2Um">
-                                <rect key="frame" x="172" y="624" width="31" height="30"/>
+                                <rect key="frame" x="172" y="627" width="31" height="30"/>
                                 <state key="normal" title="暂停"/>
                                 <connections>
                                     <action selector="pauseButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8A-eq-eU3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeZ-ci-wTH">
-                                <rect key="frame" x="304" y="624" width="31" height="30"/>
+                                <rect key="frame" x="304" y="627" width="31" height="30"/>
                                 <state key="normal" title="移除"/>
                                 <connections>
                                     <action selector="removeButtomAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OTb-oP-iFG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwb-fE-msN">
-                                <rect key="frame" x="32" y="624" width="62" height="30"/>
+                                <rect key="frame" x="32" y="627" width="62" height="30"/>
                                 <state key="normal" title="继续播放"/>
                                 <connections>
                                     <action selector="continuePlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k1s-NV-Bzc"/>
@@ -89,11 +89,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vq2-yt-clS" secondAttribute="trailing" constant="16" id="V7d-RO-SFS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yeZ-ci-wTH" secondAttribute="trailing" constant="40" id="cnj-qp-5Js"/>
                             <constraint firstItem="UoB-ck-ZZq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="d2j-eP-ued"/>
-                            <constraint firstItem="Pwb-fE-msN" firstAttribute="top" secondItem="UoB-ck-ZZq" secondAttribute="bottom" constant="100" id="dIA-Cz-S2m"/>
                             <constraint firstItem="tYe-nX-2Um" firstAttribute="centerX" secondItem="UoB-ck-ZZq" secondAttribute="centerX" id="dYM-WN-YKN"/>
                             <constraint firstItem="Pwb-fE-msN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="ecN-f8-3jN"/>
                             <constraint firstItem="XCe-d3-tMH" firstAttribute="top" secondItem="UoB-ck-ZZq" secondAttribute="bottom" constant="25" id="nTW-mh-NeQ"/>
                             <constraint firstItem="tYe-nX-2Um" firstAttribute="centerY" secondItem="Pwb-fE-msN" secondAttribute="centerY" id="psU-rI-ulu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Pwb-fE-msN" secondAttribute="bottom" constant="10" id="wnA-iy-LgT"/>
                             <constraint firstItem="yeZ-ci-wTH" firstAttribute="centerY" secondItem="Pwb-fE-msN" secondAttribute="centerY" id="zgr-Eb-zb6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UoB-ck-ZZq" secondAttribute="trailing" constant="16" id="zsS-yt-R6M"/>
                         </constraints>
@@ -151,6 +151,13 @@
                                     <action selector="remove:" destination="zmc-gN-523" eventType="touchUpInside" id="NF1-4m-gv0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLi-6N-pJ4">
+                                <rect key="frame" x="298" y="518" width="62" height="30"/>
+                                <state key="normal" title="进入列表"/>
+                                <connections>
+                                    <segue destination="cbL-QJ-ekM" kind="push" id="WkK-ss-KYf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -165,6 +172,8 @@
                             <constraint firstItem="IBI-Os-XPB" firstAttribute="centerY" secondItem="4qa-Ih-01N" secondAttribute="centerY" id="aBh-dS-AAB"/>
                             <constraint firstItem="t9h-tl-Vae" firstAttribute="centerX" secondItem="b9A-Uf-hD8" secondAttribute="centerX" id="eoc-qY-2t0"/>
                             <constraint firstItem="4qa-Ih-01N" firstAttribute="top" secondItem="b9A-Uf-hD8" secondAttribute="bottom" constant="80" id="f05-hF-A2l"/>
+                            <constraint firstItem="ahP-dC-ADP" firstAttribute="trailing" secondItem="qLi-6N-pJ4" secondAttribute="trailing" constant="15" id="qgL-Hr-uwF"/>
+                            <constraint firstItem="qLi-6N-pJ4" firstAttribute="top" secondItem="b9A-Uf-hD8" secondAttribute="bottom" constant="10" id="tJs-1q-PEh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ahP-dC-ADP"/>
                     </view>
@@ -176,6 +185,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGq-Mt-GzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="943.20000000000005" y="99.400299850074973"/>
+        </scene>
+        <!--视频列表-->
+        <scene sceneID="xx6-Pw-Jdn">
+            <objects>
+                <viewController id="cbL-QJ-ekM" customClass="ListViewController" customModule="VideoPlaySwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="haz-0W-pqA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FNf-2f-njb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FNf-2f-njb" firstAttribute="leading" secondItem="64U-iE-dhP" secondAttribute="leading" id="3jF-Ar-OG8"/>
+                            <constraint firstItem="FNf-2f-njb" firstAttribute="bottom" secondItem="64U-iE-dhP" secondAttribute="bottom" id="KiN-GQ-LGK"/>
+                            <constraint firstItem="FNf-2f-njb" firstAttribute="top" secondItem="64U-iE-dhP" secondAttribute="top" id="WLi-Tm-SI8"/>
+                            <constraint firstItem="FNf-2f-njb" firstAttribute="trailing" secondItem="64U-iE-dhP" secondAttribute="trailing" id="t2F-Ym-DCz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="64U-iE-dhP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="视频列表" id="U7z-94-Tdz"/>
+                    <connections>
+                        <outlet property="tableView" destination="FNf-2f-njb" id="m7h-Qz-ke0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sMa-s7-FgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="105.69715142428787"/>
         </scene>
     </scenes>
 </document>

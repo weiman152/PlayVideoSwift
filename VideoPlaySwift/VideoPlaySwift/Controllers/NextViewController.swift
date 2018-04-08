@@ -11,7 +11,7 @@ import UIKit
 class NextViewController: UIViewController {
     
     @IBOutlet weak var playView: UIView!
-    
+    // 带UI的视频
     private var player = VideoPlayView()
 
     override func viewDidLoad() {
