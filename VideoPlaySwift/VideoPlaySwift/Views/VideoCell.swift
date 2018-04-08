@@ -28,6 +28,8 @@ class VideoCell: UITableViewCell {
     }
     
     func set(model: DataModel.Model) {
-        
+        authorName.text = model.authorName
+        time.text = model.time
+        titleDesc.text = model.videoDesc
     }
 }

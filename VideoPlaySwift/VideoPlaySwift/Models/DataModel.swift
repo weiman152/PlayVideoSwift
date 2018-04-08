@@ -20,7 +20,7 @@ class DataModel: NSObject {
     }
     
     /// 创建数据
-    func makeData() -> [Model] {
+    class func makeData() -> [Model] {
         var videoList = [Model]()
         do {
             var model1 = Model()
@@ -38,7 +38,7 @@ class DataModel: NSObject {
             model1.authorName = "东施频频笑"
             model1.time = "3月28日"
             model1.videoUrl = "http://flv3.bn.netease.com/tvmrepo/2018/4/N/Q/EDDSUEONQ/SD/EDDSUEONQ-mobile.mp4"
-            model1.videoDesc = "就服那句:老子半截身子 入土了。。哈哈哈"
+            model1.videoDesc = "就服那句:老子半截身子 入土了。。哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈"
             model1.videoCover = "http://vimg3.ws.126.net/image/snapshot/2018/4/0/V/VDDSUF90V.jpg"
             videoList.append(model1)
         }
@@ -78,7 +78,7 @@ class DataModel: NSObject {
             model1.authorName = "短视频"
             model1.time = "2018-04-03 21:11:40"
             model1.videoUrl = "http://flv3.bn.netease.com/tvmrepo/2018/4/7/M/EDDSUE27M/SD/EDDSUE27M-mobile.mp4"
-            model1.videoDesc = "就喜欢你这种逗比，没办法"
+            model1.videoDesc = "就喜欢你这种逗比，没办法。啦啦啦就喜欢你这种逗比，没办法。啦啦啦就喜欢你这种逗比，没办法。啦啦啦就喜欢你这种逗比，没办法。啦啦啦就喜欢你这种逗比，没办法。啦啦啦就喜欢你这种逗比，没办法。啦啦啦就喜欢你这种逗比，没办法。啦啦啦"
             model1.videoCover = "http://vimg2.ws.126.net/image/snapshot/2018/4/4/3/VDDSUEH43.jpg"
             videoList.append(model1)
         }

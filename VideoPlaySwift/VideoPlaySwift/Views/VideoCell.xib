@@ -44,7 +44,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.89012342820000001" blue="0.74477629739999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="7uK-q6-Vqx" firstAttribute="leading" secondItem="fJZ-Iu-n46" secondAttribute="trailing" constant="8" id="7vi-OC-XPX"/>
                             <constraint firstItem="MZQ-lj-TK9" firstAttribute="leading" secondItem="7uK-q6-Vqx" secondAttribute="leading" id="8Yc-a8-LT0"/>
@@ -62,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="288" height="216"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.17254901959999999" green="0.61176470589999998" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tnN-Jt-CLT" secondAttribute="bottom" id="EE3-rc-xBG"/>
                             <constraint firstItem="tnN-Jt-CLT" firstAttribute="top" secondItem="po3-Fh-Vyq" secondAttribute="top" id="LgP-Iv-vnr"/>
@@ -72,16 +71,15 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXH-SZ-4n3" userLabel="infoView">
-                        <rect key="frame" x="16" y="281" width="288" height="118.5"/>
+                        <rect key="frame" x="16" y="291" width="288" height="98.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18年来浮沉变幻，亚洲乐坛，多少人来了又" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddX-KT-MOR">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="118.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="98.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.96444109069999995" blue="0.77218746090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ddX-KT-MOR" secondAttribute="trailing" constant="8" id="2pO-XV-GOW"/>
                             <constraint firstItem="ddX-KT-MOR" firstAttribute="top" secondItem="yXH-SZ-4n3" secondAttribute="top" id="K3U-2S-g0a"/>
@@ -96,8 +94,8 @@
                     <constraint firstItem="po3-Fh-Vyq" firstAttribute="top" secondItem="XL4-9U-zr7" secondAttribute="bottom" id="FHA-dc-8yk"/>
                     <constraint firstItem="XL4-9U-zr7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OBS-WJ-2KR"/>
                     <constraint firstAttribute="trailing" secondItem="XL4-9U-zr7" secondAttribute="trailing" constant="16" id="QYA-m3-A4k"/>
-                    <constraint firstAttribute="bottom" secondItem="yXH-SZ-4n3" secondAttribute="bottom" id="ShG-Kt-aTj"/>
-                    <constraint firstItem="yXH-SZ-4n3" firstAttribute="top" secondItem="po3-Fh-Vyq" secondAttribute="bottom" id="W5f-aW-MNc"/>
+                    <constraint firstAttribute="bottom" secondItem="yXH-SZ-4n3" secondAttribute="bottom" constant="10" id="ShG-Kt-aTj"/>
+                    <constraint firstItem="yXH-SZ-4n3" firstAttribute="top" secondItem="po3-Fh-Vyq" secondAttribute="bottom" constant="10" id="W5f-aW-MNc"/>
                     <constraint firstItem="yXH-SZ-4n3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Xhd-WJ-ej7"/>
                     <constraint firstAttribute="trailing" secondItem="yXH-SZ-4n3" secondAttribute="trailing" constant="16" id="f0h-Pe-iJY"/>
                     <constraint firstItem="po3-Fh-Vyq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="iNr-Sg-rKd"/>
