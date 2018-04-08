@@ -60,10 +60,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tnN-Jt-CLT">
                                 <rect key="frame" x="0.0" y="0.0" width="288" height="216"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWi-JO-Ckp">
+                                <rect key="frame" x="108" y="72" width="72" height="72"/>
+                                <state key="normal" image="list_play"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="tnN-Jt-CLT" secondAttribute="bottom" id="EE3-rc-xBG"/>
+                            <constraint firstItem="JWi-JO-Ckp" firstAttribute="centerY" secondItem="po3-Fh-Vyq" secondAttribute="centerY" id="FFX-FV-7Vh"/>
+                            <constraint firstItem="JWi-JO-Ckp" firstAttribute="centerX" secondItem="po3-Fh-Vyq" secondAttribute="centerX" id="FLm-jY-XZK"/>
                             <constraint firstItem="tnN-Jt-CLT" firstAttribute="top" secondItem="po3-Fh-Vyq" secondAttribute="top" id="LgP-Iv-vnr"/>
                             <constraint firstAttribute="trailing" secondItem="tnN-Jt-CLT" secondAttribute="trailing" id="Tgb-eZ-Bfy"/>
                             <constraint firstItem="tnN-Jt-CLT" firstAttribute="leading" secondItem="po3-Fh-Vyq" secondAttribute="leading" id="aZq-f4-aAS"/>
@@ -112,4 +118,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="list_play" width="72" height="72"/>
+    </resources>
 </document>

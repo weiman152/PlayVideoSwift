@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class VideoCell: UITableViewCell {
     
@@ -28,6 +29,16 @@ class VideoCell: UITableViewCell {
     }
     
     func set(model: DataModel.Model) {
+        
+        if let strUrl = model.authorImage, let url = URL(string: strUrl) {
+            let res: ImageResource = ImageResource(downloadURL: url)
+            authorImage.kf.setImage(with: res)
+        }
+        if let strUrl = model.videoCover, let url = URL(string: strUrl) {
+            let res: ImageResource = ImageResource(downloadURL: url)
+            videoCover.kf.setImage(with: res)
+        }
+        
         authorName.text = model.authorName
         time.text = model.time
         titleDesc.text = model.videoDesc
