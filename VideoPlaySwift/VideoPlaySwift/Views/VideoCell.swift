@@ -9,23 +9,31 @@
 import UIKit
 import Kingfisher
 
+protocol VideoCellDelegate: NSObjectProtocol {
+    
+    /// 检查当前正在播放的视频和点击的视频是否是同一个视频
+    func checkPlayingVideo(indexPath: IndexPath)
+}
+
 class VideoCell: UITableViewCell {
     
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var time: UILabel!
-    
     @IBOutlet weak var playView: UIView!
     @IBOutlet weak var videoCover: UIImageView!
-    
     @IBOutlet weak var titleDesc: UILabel!
     
+    weak var delegate: VideoCellDelegate?
     private var videoUrl: String?
+    private let mediaPlayer = VideoPlay.shareSingle
+    private var cellIndexPath: IndexPath?
     
     class func setup(tableView: UITableView, indexPath: IndexPath) -> VideoCell {
         let nib = UINib(nibName: "VideoCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "VideoCell")
         let cell: VideoCell = tableView.dequeueReusableCell(withIdentifier: "VideoCell", for: indexPath) as! VideoCell
+        cell.cellIndexPath = indexPath
         return cell
     }
     
@@ -48,10 +56,13 @@ class VideoCell: UITableViewCell {
     }
     
     @IBAction func playButtonAction(_ sender: Any) {
-        guard let urlStr = videoUrl else {
+        guard let urlStr = videoUrl,
+              let indexPath = cellIndexPath else {
             return
         }
-        let mediaPlayer = VideoPlay.shareSingle
+        
+        delegate?.checkPlayingVideo(indexPath: indexPath)
+        
         let playLayer = mediaPlayer.setup(url: urlStr, frame: playView.bounds)
         playView.layer.addSublayer(playLayer)
         mediaPlayer.play()
