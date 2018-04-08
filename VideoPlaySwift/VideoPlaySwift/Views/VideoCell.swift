@@ -20,6 +20,7 @@ class VideoCell: UITableViewCell {
     
     @IBOutlet weak var titleDesc: UILabel!
     
+    private var videoUrl: String?
     
     class func setup(tableView: UITableView, indexPath: IndexPath) -> VideoCell {
         let nib = UINib(nibName: "VideoCell", bundle: nil)
@@ -29,6 +30,8 @@ class VideoCell: UITableViewCell {
     }
     
     func set(model: DataModel.Model) {
+        
+        videoUrl = model.videoUrl
         
         if let strUrl = model.authorImage, let url = URL(string: strUrl) {
             let res: ImageResource = ImageResource(downloadURL: url)
@@ -43,4 +46,15 @@ class VideoCell: UITableViewCell {
         time.text = model.time
         titleDesc.text = model.videoDesc
     }
+    
+    @IBAction func playButtonAction(_ sender: Any) {
+        guard let urlStr = videoUrl else {
+            return
+        }
+        let mediaPlayer = VideoPlay.shareSingle
+        let playLayer = mediaPlayer.setup(url: urlStr, frame: playView.bounds)
+        playView.layer.addSublayer(playLayer)
+        mediaPlayer.play()
+    }
+    
 }

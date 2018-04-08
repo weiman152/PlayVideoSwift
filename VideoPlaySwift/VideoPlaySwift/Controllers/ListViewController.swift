@@ -22,7 +22,6 @@ class ListViewController: UIViewController {
         
     }
     
-
 }
 
 extension ListViewController: UITableViewDataSource {
@@ -38,6 +37,11 @@ extension ListViewController: UITableViewDataSource {
 }
 
 extension ListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("--------------  \(indexPath.row)")
+        
+    }
     
 }
 
