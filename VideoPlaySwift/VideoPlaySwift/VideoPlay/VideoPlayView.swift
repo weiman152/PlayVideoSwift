@@ -251,12 +251,14 @@ extension VideoPlayView {
     
     @objc func sliderTouchDown(slider: CustomSlider) {
         isSliderDraging = true
+        Cancel(task: autoHideTask)
     }
     
     @objc func sliderEnd(slider: CustomSlider) {
         isSliderDraging = false
         let time = slider.value * videoTotalTime
         mediaPlayer.seekTo(time: time)
+        handleAutoHide()
     }
     
     @objc func sliderValueChange(slider: CustomSlider) {
