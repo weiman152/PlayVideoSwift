@@ -18,6 +18,12 @@ protocol VideoPlayDelegate: NSObjectProtocol {
     func updatePlayTime(progress: Float, value: Float)
     /// 播放完成
     func playFinish()
+    /// 加载中
+    func loading()
+    /// 准备播放
+    func ready()
+    /// 播放错误
+    func error()
 }
 
 class VideoPlay: NSObject {
@@ -46,6 +52,10 @@ class VideoPlay: NSObject {
     private var playerLayer = AVPlayerLayer()
     // 播放进度的timer
     private var playScheduleTimer = Timer()
+    
+    private let kvo_loadedTimeRanges = "loadedTimeRanges"
+    private let kvo_status = "status"
+    private let kvo_isPlaybackBufferEmpty = "playbackBufferEmpty"
     
     // 单例
     static let shareSingle = VideoPlay()
@@ -96,7 +106,9 @@ extension VideoPlay {
     func remove() {
         if let playerItem = player.currentItem {
             playerItem.seek(to: kCMTimeZero, completionHandler: nil)
-            playerItem.removeObserver(self, forKeyPath: "loadedTimeRanges")
+            playerItem.removeObserver(self, forKeyPath: kvo_loadedTimeRanges)
+            playerItem.removeObserver(self, forKeyPath: kvo_status)
+            playerItem.removeObserver(self, forKeyPath: kvo_isPlaybackBufferEmpty)
         }
         player.replaceCurrentItem(with: nil)
         currentPlayUrl = nil
@@ -145,8 +157,9 @@ extension VideoPlay {
     
     @objc private func playItemDidPlayToEnd(nitification: Notification) {
         print("播放完成")
+        // 播放完成以后，使用者需要自己决定是否移除视频
         delegate?.playFinish()
-        remove()
+        //remove()
     }
 }
 
@@ -159,23 +172,47 @@ extension VideoPlay {
             return
         }
         item.addObserver(self,
-                         forKeyPath: "loadedTimeRanges",
+                         forKeyPath: kvo_loadedTimeRanges,
+                         options: .new,
+                         context: nil)
+        item.addObserver(self,
+                         forKeyPath: kvo_status,
+                         options: .new,
+                         context: nil)
+        item.addObserver(self,
+                         forKeyPath: kvo_isPlaybackBufferEmpty,
                          options: .new,
                          context: nil)
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?,
+                               of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
         guard let item = object,
               item is AVPlayerItem else {
                 return
         }
         let playItem: AVPlayerItem = item as! AVPlayerItem
-
+        
         let totalTimeM = playItem.duration
         let totalTime = Float(totalTimeM.value)/Float(totalTimeM.timescale)
         delegate?.updateTotalTime(totalTime: totalTime)
-        // 缓冲
-        if keyPath == "loadedTimeRanges" {
+        
+        switch keyPath {
+            
+        case kvo_status:
+            
+            switch playItem.status {
+            case .unknown:
+                delegate?.error()
+            case .readyToPlay:
+                delegate?.ready()
+            case .failed:
+                delegate?.error()
+            }
+            
+        case kvo_loadedTimeRanges:
             // 加载时间
             let array = playItem.loadedTimeRanges
             // 本次缓冲时间范围
@@ -189,6 +226,22 @@ extension VideoPlay {
             DispatchQueue.main.async { [weak self] in
                 self?.delegate?.updateProgress(progress: progress)
             }
+            
+        case kvo_isPlaybackBufferEmpty:
+            guard
+                let change = change,
+                let isEmpty = change[.newKey] as? Bool else {
+                    return
+            }
+            if isEmpty {
+                delegate?.loading()
+            }
+        default: break
+            
+        }
+        // 缓冲
+        if keyPath == kvo_loadedTimeRanges {
+
         }
         
     }

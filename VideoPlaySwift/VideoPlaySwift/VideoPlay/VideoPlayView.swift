@@ -318,6 +318,18 @@ extension VideoPlayView {
 
 /// 代理相关
 extension VideoPlayView: VideoPlayDelegate {
+    func loading() {
+        
+    }
+    
+    func ready() {
+        
+    }
+    
+    func error() {
+        
+    }
+    
     
     func updateProgress(progress: Float) {
         self.progress.progress = progress
