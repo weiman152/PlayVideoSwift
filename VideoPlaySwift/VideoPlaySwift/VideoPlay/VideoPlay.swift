@@ -65,7 +65,7 @@ class VideoPlay: NSObject {
         addNotification()
     }
     
-    func setup(url: String, frame: CGRect) -> AVPlayerLayer {
+    public func setup(url: String, frame: CGRect) -> AVPlayerLayer {
         currentPlayUrl = url
         
         let playItem = AVPlayerItem(url: URL(string: url)!)

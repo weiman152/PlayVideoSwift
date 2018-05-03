@@ -26,7 +26,8 @@ class VideoCell: UITableViewCell {
     
     weak var delegate: VideoCellDelegate?
     private var videoUrl: String?
-    private let mediaPlayer = VideoPlay.shareSingle
+    //private let mediaPlayer = VideoPlay.shareSingle
+    private let mediaPlayer = VideoPlayView()
     private var cellIndexPath: IndexPath?
     
     class func setup(tableView: UITableView, indexPath: IndexPath) -> VideoCell {
@@ -63,9 +64,24 @@ class VideoCell: UITableViewCell {
         
         delegate?.checkPlayingVideo(indexPath: indexPath)
         
+        //使用不带任何UI的播放器
+        //usePlayerWithoutUI(urlStr: urlStr)
+
+        //使用带UI的播放器
+        usePlayerWithUI(urlStr: urlStr)
+       
+    }
+    
+    private func usePlayerWithoutUI(urlStr: String) {
+        
         let playLayer = mediaPlayer.setup(url: urlStr, frame: playView.bounds)
         playView.layer.addSublayer(playLayer)
         mediaPlayer.play()
+    }
+    
+    private func usePlayerWithUI(urlStr: String) {
+        playView.addSubview(mediaPlayer)
+        mediaPlayer.playVideo(url: urlStr, frame: playView.bounds)
     }
     
 }
