@@ -35,7 +35,7 @@ end
 
 列表：
 
-![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8.png)
+![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/list.gif)
 
 <br>
 
