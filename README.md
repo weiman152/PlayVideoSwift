@@ -9,9 +9,45 @@ swift语言封装的视频播放器。
 
 如果你要使用封装的UI，也就是VideoPlayView，  需要导入autolayout的一个库 SnapKit 。类似于OC中的Masonry。不过这个库是swift版本的。
 
+依赖库：
+SnapKit（自动布局）
+Kingfisher（加载网络图片）
+这两个库都是纯swift版本的，都很好用。
+
+demo中是使用cocopods进行导入的。
+
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+target 'VideoPlaySwift' do
+use_frameworks!
+
+pod 'SnapKit'
+pod 'Kingfisher'
+
+end
+
 
 只使用视屏播放功能：
 视频播放的类： VideoPlay，继承自NSObject。
+
+效果简单截图：
+
+列表：
+
+![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8.png)
+
+列表播放：
+
+![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E8%A7%86%E9%A2%91%E5%88%97%E8%A1%A8%E6%92%AD%E6%94%BE.gif)
+
+
+没有UI，纯播放:
+![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E6%B2%A1%E6%9C%89UI%EF%BC%8C%E7%BA%AF%E6%92%AD%E6%94%BE.gif)
+
+带UI的播放：
+![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E5%B8%A6UI%E7%9A%84%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE.gif)
+
 
 代理：
 
