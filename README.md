@@ -46,12 +46,12 @@ end
 <br><br>
 
 
-没有UI，纯播放:
+没有UI，纯播放:<br>
 ![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E6%B2%A1%E6%9C%89UI%EF%BC%8C%E7%BA%AF%E6%92%AD%E6%94%BE.gif)
 
 <br><br>
 
-带UI的播放：
+带UI的播放：<br>
 ![Alt text](https://github.com/weiman152/PlayVideoSwift/blob/master/ScreenShots/%E5%B8%A6UI%E7%9A%84%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE.gif)
 
 <br><br>
