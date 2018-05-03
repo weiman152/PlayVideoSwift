@@ -26,7 +26,7 @@ class VideoCell: UITableViewCell {
     
     weak var delegate: VideoCellDelegate?
     private var videoUrl: String?
-    //private let mediaPlayer = VideoPlay.shareSingle
+    private let mediaPlayerWithoutUI = VideoPlay.shareSingle
     private let mediaPlayer = VideoPlayView()
     private var cellIndexPath: IndexPath?
     
@@ -72,9 +72,9 @@ class VideoCell: UITableViewCell {
        
     }
     
-    private func usePlayerWithoutUI(urlStr: String) {
-        
-        let playLayer = mediaPlayer.setup(url: urlStr, frame: playView.bounds)
+    func usePlayerWithoutUI(urlStr: String) {
+        //
+        let playLayer = mediaPlayerWithoutUI.setup(url: urlStr, frame: playView.bounds)
         playView.layer.addSublayer(playLayer)
         mediaPlayer.play()
     }
